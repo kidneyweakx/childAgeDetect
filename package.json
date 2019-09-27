@@ -1,12 +1,16 @@
 {
+  "name": "child-age",
+  "version": "0.0.1",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "justadudewhohacks",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
     "face-api.js": "^0.21.0",
     "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "10.16.x"
   }
 }
