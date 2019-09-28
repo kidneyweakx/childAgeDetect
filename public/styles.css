@@ -56,7 +56,21 @@
 .pad-sides-sm {
   padding: 0 8px !important;
 }
-
+/*confirm_button style*/
+.confirm_button{
+  display: none;
+  height: 30px;
+  background: greenyellow;
+  border: none;
+  border-radius: 3px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s
+}
+.confirm_button:hover{
+  background: green;
+  color: white;
+}
+/*confirm_button style_ends*/
 #github-link {
   display: flex !important;
   justify-content: center;
@@ -73,4 +87,34 @@
 
 #facesContainer canvas {
   margin: 10px;
+}
+
+/* new stylesheets 2019/9/28*/
+#HBBdiv{
+  background:rgba(0, 0, 0,0.6);
+  width: 150px;height: 20px;
+  position: absolute;bottom: 0px;left: -3px;
+  text-align:center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  
+}
+
+#HBBdiv :hover{
+  cursor: pointer;
+  background:rgba(0, 0, 0,1);
+}
+
+#bordersettings{
+  color: #cccccc;width: 40px;height: 40px;position: absolute;top: 0px;right:0px;text-align:center;font-size: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#bordersettings:hover{
+  background: #ff1a1a;
+  color: white;
+  cursor: pointer;
+}
+#time_and_fps{
+  background:rgba(0, 0, 0,0.6);width: 220px;height: 20px;position: absolute;bottom: -3px;right: -3px;text-align:center;
 }
