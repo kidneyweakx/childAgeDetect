@@ -1,10 +1,13 @@
+
 .page-container {
   left: 0;
   right: 0;
   margin: auto;
   margin-top: 20px;
-  padding-left: 280px;
-  display: inline-flex !important;
+  /*padding-left: 280px;*/
+  display: flex !important;
+  justify-content: center;
+  position: relative;
 }
 
 @media only screen and (max-width : 992px) {
@@ -70,6 +73,10 @@
   background: green;
   color: white;
 }
+.confirm_button:focus{
+  background: green;
+  color: white;
+}
 .deny_button{
   display: none;
   height: 50px;
@@ -81,6 +88,10 @@
   -webkit-transition: 0.3s
 }
 .deny_button:hover{
+  background: darkred;
+  color: white;
+}
+.deny_button:focus{
   background: darkred;
   color: white;
 }
@@ -132,4 +143,35 @@
 }
 #time_and_fps{
   background:rgba(0, 0, 0,0.6);width: 220px;height: 20px;position: absolute;bottom: -3px;right: -3px;text-align:center;
+}
+#title{
+  position: relative;text-align: center;font-family: 'Black Ops One', cursive;
+}
+
+.legalBG{
+  background: gray;
+}
+.denyBG{
+  background: linear-gradient(225deg, #ffa3a3, #a3ffa3, #a3a3ff);background-size: 1200% 1200%;
+
+  -webkit-animation: weebo 16s ease infinite;
+  -moz-animation: weebo 16s ease infinite;
+  animation: weebo 16s ease infinite;
+  height: 100%;
+}
+/* gradient changing animation 2019/9/29*/
+@-webkit-keyframes weebo {
+  0%{background-position:0% 0%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 0%}
+}
+@-moz-keyframes weebo {
+  0%{background-position:0% 0%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 0%}
+}
+@keyframes weebo {
+  0%{background-position:0% 0%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 0%}
 }
