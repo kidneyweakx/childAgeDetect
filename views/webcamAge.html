@@ -30,8 +30,10 @@
       </div>
     </div>
     <div id="button_div">
-      <button id="confirm_button_legal" class="confirm_button">Legal</button>
-      <button id="confirm_button_illegal" class="confirm_button">Stop!You violate the laws!</button>
+      <button id="confirm_button_legal" 
+      class="confirm_button" 
+      onclick="$('#tiny_face_detector_controls').show()">Legal ! You can use Advanced Setting</button>
+      <button id="confirm_button_illegal" class="deny_button">Stop ! You violate the laws!</button>
     </div>
     <!-- temporary display none-->
     <div class="row side-by-side" style="display: none">
@@ -164,11 +166,12 @@
         
         // display button
         if(interpolatedAge >= 18){
-          $('#confirm_button_legal').css('display','block')
-          $('#confirm_button_illegal').css('display','none')
+          $('#confirm_button_legal').show()
+          $('#confirm_button_illegal').hide()
         }else{
-          $('#confirm_button_legal').css('display','none')
-          $('#confirm_button_illegal').css('display','block')
+          $('#confirm_button_legal').hide()
+          $('#confirm_button_illegal').show()
+          $('#tiny_face_detector_controls').hide()
         }
       }
 
@@ -188,8 +191,6 @@
       videoEl.srcObject = stream
     }
 
-    function updateResults() {}
-
     $(document).ready(function() {
       initFaceDetectionControls()
       run()
@@ -201,7 +202,6 @@
         $('#time_and_fps').css('display','none')
         $('#HBBdiv').css('display','none')
         bordermode+=1
-       
       }else if(bordermode %3 ==1){
         $('.margin').css('border','0px')
         $('#bordersettings').css('right','1px')

@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, './public')))
 app.use(express.static(path.join(__dirname, './weights')))
 app.use(express.static(path.join(__dirname, './api')))
 
-// app.get('/', (req, res) => res.redirect('/webcam_age'))
 app.get('/', (req, res) => res.sendFile(path.join(viewsDir, 'webcamAge.html')))
 
 

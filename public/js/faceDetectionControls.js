@@ -103,6 +103,7 @@ async function changeFaceDetector(detector) {
   }
 
   $(`#${detector}_controls`).show()
+  $('#tiny_face_detector_controls').hide()
   $('#loader').hide()
 }
 

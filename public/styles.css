@@ -59,7 +59,7 @@
 /*confirm_button style*/
 .confirm_button{
   display: none;
-  height: 30px;
+  height: 50px;
   background: greenyellow;
   border: none;
   border-radius: 3px;
@@ -70,6 +70,21 @@
   background: green;
   color: white;
 }
+.deny_button{
+  display: none;
+  height: 50px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s
+}
+.deny_button:hover{
+  background: darkred;
+  color: white;
+}
+
 /*confirm_button style_ends*/
 #github-link {
   display: flex !important;
