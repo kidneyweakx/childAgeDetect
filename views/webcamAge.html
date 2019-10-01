@@ -18,8 +18,9 @@
     <div class="progress" id="loader">
       <div class="indeterminate"></div>
     </div>
-    <div style="position: relative;border: 4px solid rgb(0, 0, 0); height: 480px;width: 640px; box-sizing:content-box" class="margin" >
-      <video onloadedmetadata="onPlay(this)" id="inputVideo"  autoplay muted playsinline></video>
+    <div style="position: relative;border: 4px solid rgb(0, 0, 0);  box-sizing:content-box" class="margin" >
+      <video onloadedmetadata="onPlay(this)" id="inputVideo"  autoplay muted playsinline ></video>
+      </script>
       <canvas id="overlay" ></canvas>
       <div id="bordersettings" onclick="borderswtich()">&#9881;</div>
       <div id="time_and_fps" >
@@ -37,6 +38,7 @@
       onclick="$('#tiny_face_detector_controls').show();legalbg();">Legal ! You can use Advanced Setting</button>
       <button id="confirm_button_illegal" class="deny_button" onclick="denybg();">Stop ! You violate the laws!</button>
     </div>
+    
     <!-- temporary display none-->
     <div class="row side-by-side" style="display: none">
 
@@ -175,6 +177,8 @@
           $('#confirm_button_illegal').show()
           $('#tiny_face_detector_controls').hide()
         }
+        //match border width and height
+        $('.margin').css({'height':videoEl.videoHeight+'px','width':videoEl.videoWidth+'px'})
       }
 
       setTimeout(() => onPlay())
@@ -191,6 +195,7 @@
       const stream = await navigator.mediaDevices.getUserMedia({ video: {} })
       const videoEl = $('#inputVideo').get(0)
       videoEl.srcObject = stream
+      
     }
 
     $(document).ready(function() {
@@ -228,11 +233,6 @@
       $('#title').css({'font-family':'Loved by the King, cursive','color':'white'})
 
     }
-    // get video resolution
-    /*function test(){
-      const videoEl = $('#inputVideo').get(0)
-      alert(videoEl.videoHeight+' and '+videoEl.videoWidth)
-    }*/
     
   </script>
 </body>
