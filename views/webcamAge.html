@@ -106,7 +106,6 @@
     let withBoxes = true
 
     function onChangeHideBoundingBoxes() {
-      //withBoxes = !$(e.target).prop('checked')
       withBoxes = !withBoxes
       if(withBoxes){
         $('#HBBspan').html('Hide Bounding Boxes')
@@ -118,8 +117,6 @@
     function updateTimeStats(timeInMs) {
       forwardTimes = [timeInMs].concat(forwardTimes).slice(0, 30)
       const avgTimeInMs = forwardTimes.reduce((total, t) => total + t) / forwardTimes.length
-      //$('#time').val(`${Math.round(avgTimeInMs)} ms`)
-      //$('#fps').val(`${faceapi.round(1000 / avgTimeInMs)}`)
       $('#right_bottom_time').html(' Time:'+`${Math.round(avgTimeInMs)} ms`)
       $('#right_bottom_fps').html(' Estimated Fps:'+`${faceapi.round(1000 / avgTimeInMs)}`)
     }
@@ -158,7 +155,7 @@
 
         // interpolate gender predictions over last 30 frames
         // to make the displayed age more stable
-        // 顯示年齡
+        // display age
         const interpolatedAge = interpolateAgePredictions(age)
         new faceapi.draw.DrawTextField(
           [
