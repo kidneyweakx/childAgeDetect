@@ -245,6 +245,7 @@ button {
   border: 4px solid #37474F;  
   box-sizing:content-box;
   position: relative;
+  overflow:auto;
 }
 .see canvas {
   position: absolute;
