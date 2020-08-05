@@ -129,10 +129,10 @@ export default {
   methods: {
     // load models
     async fnInit() {
-      await faceapi.nets[this.nets].loadFromUri("/models"); // algo
-      await faceapi.loadFaceLandmarkModel("/models"); // landmark
-      await faceapi.loadFaceExpressionModel("/models"); // expression
-      await faceapi.loadAgeGenderModel("/models"); // age
+      await faceapi.nets[this.nets].loadFromUri("./models"); // algo
+      await faceapi.loadFaceLandmarkModel("./models"); // landmark
+      await faceapi.loadFaceExpressionModel("./models"); // expression
+      await faceapi.loadAgeGenderModel("./models"); // age
       // change nets
       switch (this.nets) {
         case "ssdMobilenetv1":
