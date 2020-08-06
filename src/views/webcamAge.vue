@@ -3,7 +3,6 @@
     <div class="see">
       <video
         id="inputVideo"
-        poster="1280x720.png"
         muted
         loop
         playsinline
@@ -15,6 +14,7 @@
         <span id="right_bottom_fps" style="color: white;"></span>
       </div>
     </div>
+
     <div class="option">
       <div>
         <label>Control Panel：</label>
@@ -22,7 +22,7 @@
         <button @click="fnClose">End WebCam</button>
       </div>
       <div>
-        <span style="margin-right: 20px;"
+        <span
           >Switch ：</span
         >
         <label>
@@ -42,6 +42,7 @@
           />
         </label>
       </div>
+      <div v-show="isShow">
       <div>
         <label>Detect Single or All Faces：</label>
         <label>
@@ -64,6 +65,7 @@
           <input type="radio" v-model="nets" value="tinyFaceDetector" />
         </label>
       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -79,6 +81,7 @@ export default {
       withBoxes: true,
       detectFace: "detectSingleFace",
       detection: "age_gender",
+      isShow: false,
       videoEl: null,
       canvasEl: null,
       timeout: 0,
@@ -167,6 +170,7 @@ export default {
         if (Array.isArray(resizeResults)) {
           resizeResults.forEach((result) => {
             const { age, gender, genderProbability } = result;
+            if(age>18)  this.isShow=true;  else this.isShow = false;   
             new faceapi.draw.DrawTextField(
               [
                 `${Math.round(age, 0)} years`,
@@ -177,6 +181,7 @@ export default {
           });
         } else {
           const { age, gender, genderProbability } = resizeResults;
+          if(age>18)  this.isShow=true;  else this.isShow = false;    
           new faceapi.draw.DrawTextField(
             [
               `${Math.round(age, 0)} years`,
@@ -260,6 +265,9 @@ button {
   border-bottom: 2px #42b983 solid;
 }
 .option div label {
+  margin-right: 20px;
+}
+span {
   margin-right: 20px;
 }
 </style>
